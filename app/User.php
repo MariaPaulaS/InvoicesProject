@@ -28,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function clients()
+    {
+        return $this->belongsTo(Client::class, "id");
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

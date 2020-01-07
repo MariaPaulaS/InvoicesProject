@@ -14,7 +14,12 @@ class CreateSellersTable extends Migration
     public function up()
     {
         Schema::create('sellers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id_sellers');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->integer('id_card');
+            $table->integer('id_companies')->unsigned();
+            $table->foreign('id_companies')->references('id_companies')->on('companies');
             $table->timestamps();
         });
     }

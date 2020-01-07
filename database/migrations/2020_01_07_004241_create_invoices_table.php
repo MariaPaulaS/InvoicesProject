@@ -14,7 +14,22 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id_invoices');
+            $table->string('title');
+            $table->double('subtotal');
+            $table->double('total');
+            $table->string('email');
+            $table->string('city');
+            $table->string('country');
+            $table->date('duedate');
+            $table->date('expedition_date');
+            $table->date('receipt_date');
+            $table->double('iva');
+            $table->integer('id_states')->unsigned();
+            $table->foreign('id_states')->references('id_states')->on('states');
+            $table->integer('id_clients')->unsigned();
+            $table->foreign('id_clients')->references('id_clients')->on('clients');
+
             $table->timestamps();
         });
     }
