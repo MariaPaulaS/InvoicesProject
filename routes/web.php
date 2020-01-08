@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+>>>>>>> 36f6e4c789942455686a93041814953751e26d4a

@@ -16,7 +16,10 @@
     "require-dev": {
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
+<<<<<<< HEAD
         "laravel/ui": "^1.1",
+=======
+>>>>>>> 36f6e4c789942455686a93041814953751e26d4a
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0"
