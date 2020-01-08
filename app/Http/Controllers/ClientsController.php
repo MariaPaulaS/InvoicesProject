@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
 
 class ClientsController extends Controller
 {
@@ -13,7 +14,7 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        //
+        return view ('clients.index');
     }
 
     /**
@@ -24,6 +25,8 @@ class ClientsController extends Controller
     public function create()
     {
         //
+
+        return view('clients.create');
     }
 
     /**
@@ -34,7 +37,20 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'id_card' => 'required|unique:clients',
+            'number_phone' => 'required|min:10'
+        ]);
+
+        $client = new Client();
+        $client->first_name = $validate['first_name'];
+        $client->last_name = $validate['last_name'];
+        $client->id_card = $validate['id_card'];
+        $client->number_phone = intval($validate['number_phone']);
+        $client->save();
+        return redirect('/clients');
     }
 
     /**
