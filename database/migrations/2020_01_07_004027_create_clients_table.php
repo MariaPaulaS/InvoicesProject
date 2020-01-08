@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->integer('id_card');
             $table->integer('number_phone');
-            $table->integer('id_users')->unsigned();
+            $table->integer('id_users')->unsigned()->nullable();
             $table->foreign('id_users')->references('id')->on('users');
             $table->timestamps();
         });
