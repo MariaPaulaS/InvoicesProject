@@ -19,8 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/clients', function (){
-
-    return view('clients/create');
-
-});
+Route::resource("/clients", 'ClientsController');
