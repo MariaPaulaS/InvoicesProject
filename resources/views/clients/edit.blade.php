@@ -44,6 +44,16 @@
                                value="{{ $client->number_phone }}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" class="form-control" value="{{ $client->email}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="address" class="form-control" value="{{ $client->address }}">
+                    </div>
+
 
                     <!-- Add Task Button -->
                     <div class="form-group">

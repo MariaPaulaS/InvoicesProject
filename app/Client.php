@@ -14,6 +14,7 @@ class Client extends Model
         "first_name",
         "last_name",
         "id_card",
+        "address",
         "email",
         "number_phone"
     ];
