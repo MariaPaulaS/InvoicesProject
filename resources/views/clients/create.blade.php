@@ -38,6 +38,16 @@
                         <input type="text" name="number_phone" id="number_phone" class="form-control">
                     </div>
 
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="address" class="form-control">
+                    </div>
+
                     <!-- Add Task Button -->
                     <div class="form-group">
 

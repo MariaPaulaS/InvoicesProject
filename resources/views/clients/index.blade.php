@@ -25,6 +25,8 @@
                         <th>Apellido</th>
                         <th>Identificacion</th>
                         <th>Teléfono</th>
+                        <th>E-mail</th>
+                        <th>Dirección</th>
                         <th>Acción</th>
                         </thead>
                         <tbody>
@@ -34,6 +36,8 @@
                                 <td class="table-text"><div>{{ $client->last_name }}</div></td>
                                 <td class="table-text"><div>{{ $client->id_card }}</div></td>
                                 <td class="table-text"><div>{{ $client->number_phone }}</div></td>
+                                <td class="table-text"><div>{{ $client->email }}</div></td>
+                                <td class="table-text"><div>{{ $client->address }}</div></td>
                                 <td>
                                     <button type="submit" class="btn btn-success" onclick="location.href='clients/{{ $client->id_clients }}/edit'">
                                         <i class="fa fa-pencil"></i>Editar

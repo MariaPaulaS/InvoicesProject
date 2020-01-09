@@ -43,6 +43,8 @@ class ClientsController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'id_card' => 'required|unique:clients',
+            'address' => 'required',
+            'email' => 'required',
             'number_phone' => 'required|min:10'
         ]);
 
@@ -50,6 +52,8 @@ class ClientsController extends Controller
         $client->first_name = $validate['first_name'];
         $client->last_name = $validate['last_name'];
         $client->id_card = intval($validate['id_card']);
+        $client->address = $validate['address'];
+        $client->email = $validate['email'];
         $client->number_phone = intval($validate['number_phone']);
         $client->save();
         return redirect('/clients');
@@ -95,6 +99,8 @@ class ClientsController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'id_card' => 'required',
+            'address' => 'required',
+            'email' => 'required',
             'number_phone' => 'required|min:10'
         ]);
 
@@ -102,6 +108,8 @@ class ClientsController extends Controller
         $client->first_name = $request->first_name;
         $client->last_name = $request->last_name;
         $client->id_card = intval($request->id_card);
+        $client->address = $request->address;
+        $client->email = $request->email;
         $client->number_phone = intval($request->number_phone);
         $client->save();
 
