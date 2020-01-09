@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <div class="col-md-12">
+
+    <div class="col-md-11">
+
 
         <div class="panel-title">
             <h1>Lista de clientes</h1>
@@ -12,9 +14,9 @@
         <!-- Tabla -->
         @if (count($clients) > 0)
             <div class="panel panel-default">
-                <div class="panel-heading">
+             <!--   <div class="panel-heading">
                     Listado de clientes
-                </div>
+                </div> -->
 
                 <div class="panel-body">
                     <table class="table table-striped task-table">
