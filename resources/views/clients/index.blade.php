@@ -35,11 +35,11 @@
                                 <td class="table-text"><div>{{ $client->id_card }}</div></td>
                                 <td class="table-text"><div>{{ $client->number_phone }}</div></td>
                                 <td>
-                                    <button type="submit" class="btn btn-success" onclick="location.href='clients/{{ $client->id }}'">
+                                    <button type="submit" class="btn btn-success" onclick="location.href='clients/{{ $client->id_clients }}/edit'">
                                         <i class="fa fa-pencil"></i>Editar
                                     </button>
 
-                                    <form action="{{ url('clients') }}/{{ $client->id_clients }}" method="POST">
+                                    <form action="{{ url('clients') }}/{{ $client->id_clients }}"  method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
