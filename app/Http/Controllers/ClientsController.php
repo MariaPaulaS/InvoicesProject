@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Client;
 
@@ -48,7 +49,7 @@ class ClientsController extends Controller
         $client = new Client();
         $client->first_name = $validate['first_name'];
         $client->last_name = $validate['last_name'];
-        $client->id_card = $validate['id_card'];
+        $client->id_card = intval($validate['id_card']);
         $client->number_phone = intval($validate['number_phone']);
         $client->save();
         return redirect('/clients');
@@ -74,6 +75,9 @@ class ClientsController extends Controller
     public function edit($id)
     {
         //
+
+        $client = Client::findOrFail($id);
+        return view('clients.edit', compact('client'));
     }
 
     /**
@@ -86,6 +90,23 @@ class ClientsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $validate = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'id_card' => 'required',
+            'number_phone' => 'required|min:10'
+        ]);
+
+        $client = Client::findOrFail($id);
+        $client->first_name = $request->first_name;
+        $client->last_name = $request->last_name;
+        $client->id_card = intval($request->id_card);
+        $client->number_phone = intval($request->number_phone);
+        $client->save();
+
+        return redirect('clients');
+
     }
 
     /**
@@ -96,6 +117,7 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::findOrFail($id)->delete();
+        return redirect('clients');
     }
 }
