@@ -29,6 +29,8 @@ class CreateInvoicesTable extends Migration
             $table->foreign('id_states')->references('id_states')->on('states');
             $table->integer('id_clients')->unsigned();
             $table->foreign('id_clients')->references('id_clients')->on('clients');
+            $table->integer('id_companies')->unsigned();
+            $table->foreign('id_companies')->references('id_companies')->on('companies');
 
             $table->timestamps();
         });

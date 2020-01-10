@@ -6,15 +6,17 @@
     <div class="col-md-11">
 
 
+
+        <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
+        <p><br></p>
+
+
         <div class="panel-title">
             <h1>Lista de compañías</h1>
             <br>
 
         </div>
 
-
-        <a class="btn btn-light" href="{{ route('companies.create') }}"> Agregar compañía <br></a>
-        <p><br></p>
         <!-- Tabla -->
 
             <div class="panel panel-default">
@@ -35,8 +37,8 @@
                                 <td class="table-text"><div>{{ $company->name }}</div></td>
                                 <td class="table-text"><div>{{ $company->nit }}</div></td>
                                 <td>
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="fa fa-pencil"></i>Agregar vendedores
+                                    <button type="submit" class="btn btn-success" onclick="location.href='companies/{{ $company->id_companies }}/edit'">
+                                        <i class="fa fa-pencil"></i> Editar
                                     </button>
 
                                     <form action="{{ url('companies') }}/{{ $company->id_companies }}"  method="POST">
@@ -44,7 +46,7 @@
                                         {{ method_field('DELETE') }}
 
                                         <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>Eliminar
+                                            <i class="fa fa-trash"></i> Eliminar
                                         </button>
                                     </form>
                                 </td>
