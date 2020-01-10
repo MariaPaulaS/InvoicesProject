@@ -15,11 +15,6 @@ class Company extends Model
     ];
 
 
-    public function sellers()
-    {
-        return $this->belongsTo(Seller::class, "id_companies");
-    }
-
     public function invoices()
     {
         return $this->belongsTo(Invoice::class, "id_companies");

@@ -6,13 +6,17 @@
     <div class="col-md-11">
 
 
+        <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
+        <p><br></p>
+
+
         <div class="panel-title">
             <h1>Lista de clientes</h1>
             <br>
 
         </div>
         <!-- Tabla -->
-        @if (count($clients) > 0)
+
             <div class="panel panel-default">
              <!--   <div class="panel-heading">
                     Listado de clientes
@@ -58,6 +62,5 @@
                     </table>
                 </div>
             </div>
-        @endif
     </div>
 @endsection
