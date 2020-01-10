@@ -69,7 +69,7 @@ class CompaniesController extends Controller
     public function edit($id)
     {
         $company = Company::findOrFail($id);
-        return view('companies.edit', compact($company));
+        return view('companies.edit', compact('company'));
     }
 
     /**

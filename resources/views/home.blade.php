@@ -53,9 +53,9 @@
                                         <p class="h3"><i class="far fa-file-alt"></i><br>Vendedores</p>
 
                                         <p><br></p>
-                                        <a class="btn btn-success" href="{{ route('companies.index') }}"> Agregar vendedor <br></a>
+                                        <a class="btn btn-success" href="{{ route('companies.create') }}"> Agregar vendedor <br></a>
                                         <p><br></p>
-                                        <a class="btn btn-dark" > Administrar existentes </a>
+                                        <a class="btn btn-dark" href="{{ route('companies.index') }}"> Administrar existentes </a>
                                     </div>
                                 </div>
                             </div>
