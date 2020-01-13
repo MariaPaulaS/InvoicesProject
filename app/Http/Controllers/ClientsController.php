@@ -45,6 +45,8 @@ class ClientsController extends Controller
             'id_card' => 'required|unique:clients',
             'address' => 'required',
             'email' => 'required',
+            'city' => 'required',
+            'country' => 'required',
             'number_phone' => 'required|min:10'
         ]);
 
@@ -54,6 +56,8 @@ class ClientsController extends Controller
         $client->id_card = intval($validate['id_card']);
         $client->address = $validate['address'];
         $client->email = $validate['email'];
+        $client->city = $validate['city'];
+        $client->country = $validate['country'];
         $client->number_phone = intval($validate['number_phone']);
         $client->save();
         return redirect('/clients');
@@ -101,6 +105,8 @@ class ClientsController extends Controller
             'id_card' => 'required',
             'address' => 'required',
             'email' => 'required',
+            'city' => 'required',
+            'country' => 'required',
             'number_phone' => 'required|min:10'
         ]);
 
@@ -110,6 +116,8 @@ class ClientsController extends Controller
         $client->id_card = intval($request->id_card);
         $client->address = $request->address;
         $client->email = $request->email;
+        $client->city = $request->city;
+        $client->country = $request->country;
         $client->number_phone = intval($request->number_phone);
         $client->save();
 

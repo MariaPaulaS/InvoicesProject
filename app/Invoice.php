@@ -10,11 +10,9 @@ class Invoice extends Model
     protected $table = "invoices";
     protected $fillable = [
         "title",
+        "ref",
         "subtotal",
         "total",
-        "email",
-        "city",
-        "country",
         "duedate",
         "expedition_date",
         "receipt_date",

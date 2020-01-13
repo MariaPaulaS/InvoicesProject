@@ -16,15 +16,13 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id_invoices');
             $table->string('title');
-            $table->double('subtotal');
-            $table->double('total');
-            $table->string('email');
-            $table->string('city');
-            $table->string('country');
-            $table->date('duedate');
-            $table->date('expedition_date');
-            $table->date('receipt_date');
-            $table->double('iva');
+            $table->integer('ref')->nullable();
+            $table->double('subtotal')->nullable();
+            $table->double('total')->nullable();
+            $table->date('duedate')->nullable();
+            $table->date('expedition_date')->nullable();
+            $table->date('receipt_date')->nullable();
+            $table->double('iva')->nullable();
             $table->integer('id_states')->unsigned();
             $table->foreign('id_states')->references('id_states')->on('states');
             $table->integer('id_clients')->unsigned();

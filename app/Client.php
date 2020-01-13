@@ -16,6 +16,8 @@ class Client extends Model
         "id_card",
         "address",
         "email",
+        "city",
+        "country",
         "number_phone"
     ];
     public function users()

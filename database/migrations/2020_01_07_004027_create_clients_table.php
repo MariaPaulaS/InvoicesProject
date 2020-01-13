@@ -21,6 +21,8 @@ class CreateClientsTable extends Migration
             $table->string('number_phone');
             $table->string('address');
             $table->string('email');
+            $table->string('city');
+            $table->string('country');
             $table->integer('id_users')->unsigned()->nullable();
             $table->foreign('id_users')->references('id')->on('users');
             $table->timestamps();

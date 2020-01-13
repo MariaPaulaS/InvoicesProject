@@ -54,6 +54,17 @@
                         <input type="text" name="address" id="address" class="form-control" value="{{ $client->address }}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" name="city" id="city" class="form-control" value="{{ $client->city }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">País</label>
+                        <input type="text" name="country" id="country" class="form-control" value="{{ $client->country }}">
+                    </div>
+
+
 
                     <!-- Add Task Button -->
                     <div class="form-group">
