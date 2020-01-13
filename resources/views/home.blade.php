@@ -32,7 +32,7 @@
                                     <div class="text-center">
                                         <p class="h3"><i class="far fa-file-alt"></i><br>Facturas</p>
                                         <p><br></p>
-                                        <a class="btn btn-success"> Agregar factura <br></a>
+                                        <a class="btn btn-success" href="{{route('invoices.create')}}"> Agregar factura <br></a>
                                         <p><br></p>
                                         <a class="btn btn-dark"> Administrar existentes </a>
                                     </div>
