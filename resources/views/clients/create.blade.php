@@ -48,6 +48,16 @@
                         <input type="text" name="address" id="address" class="form-control">
                     </div>
 
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" name="city" id="city" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">País</label>
+                        <input type="text" name="country" id="country" class="form-control">
+                    </div>
+
                     <!-- Add Task Button -->
                     <div class="form-group">
 
