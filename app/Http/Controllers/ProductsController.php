@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -13,7 +15,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+
+        $products = Product::all();
+        return view('products.index', compact('products'));
+
     }
 
     /**
@@ -24,6 +29,8 @@ class ProductsController extends Controller
     public function create()
     {
         //
+
+        return view('products.create');
     }
 
     /**
@@ -34,7 +41,18 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name_product'=>'required',
+            'ref'=>'required',
+            'price'=>'required'
+        ]);
+
+        $product = new Product();
+        $product->name_product = $validate['name_product'];
+        $product->ref = $validate['ref'];
+        $product->price = doubleval($validate['price']);
+        $product->save();
+        return redirect('/home');
     }
 
     /**
@@ -56,7 +74,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -68,7 +87,21 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $validate = $request->validate([
+            'name_product'=>'required',
+            'ref'=>'required',
+            'price'=>'required'
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->name_product = $validate['name_product'];
+        $product->ref = $validate['ref'];
+        $product->price = doubleval($validate['price']);
+        $product->save();
+        return redirect('products');
+
+
     }
 
     /**
@@ -79,6 +112,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::findOrFail($id)->delete();
+        return redirect('products');
     }
 }
