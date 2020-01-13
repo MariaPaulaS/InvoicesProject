@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Company;
+use App\Invoice;
 use Illuminate\Http\Request;
 
 class InvoicesController extends Controller
@@ -23,24 +26,45 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        //
+        $clients = Client::all();
+        $companies = Company::all();
+
+        return view('invoices.create', compact('clients', 'companies'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
+        $validate = $request->validate([
+            'title' => 'required',
+            'ref' => 'required|unique:invoices',
+            'id_clients' => 'required',
+            'id_companies' => 'required'
+        ]);
+
+        $invoice = new Invoice();
+        $invoice->title = $validate['title'];
+        $invoice->ref = $validate['ref'];
+        $invoice->id_clients = $validate['id_clients'];
+        $invoice->id_companies = $validate['id_companies'];
+        $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
+        $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        $invoice->save();
+
+        return redirect()->route('home');
         //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,7 +75,7 @@ class InvoicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,8 +86,8 @@ class InvoicesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -74,7 +98,7 @@ class InvoicesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
