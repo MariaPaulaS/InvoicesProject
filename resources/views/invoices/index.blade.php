@@ -41,7 +41,11 @@
                                 <div>{{ $invoice->ref }}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{ $invoice->title }}</div>
+                                <div>  <a href="{{url('invoices/show/' . $invoice->id_invoices)}}">
+                                        {{$invoice->title}}
+                                    </a></div>
+
+
                             </td>
 
                             <td class="table-text">
