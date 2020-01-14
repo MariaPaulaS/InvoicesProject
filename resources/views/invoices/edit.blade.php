@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
+
+        <a class="btn btn-success" href="{{ url('invoices') }}"> Volver<br></a>
+        <p><br></p>
+
         <div class="col-sm-offset-3 col-sm-6">
             <div class="panel-title">
                 <h1>Editar factura</h1>
@@ -104,7 +108,7 @@
             <div class="col-xl-12 col-lg-12 col-md-6">
                 <div class="card o-hidden border-1 my-3">
                     <div class="card-header text-right">
-                        <a class="btn btn-primary" href="/invoices/{{ $invoice->id_invoices }}/invoice_product/create"> Añadir productos</a>
+                        <a class="btn btn-success" href="/invoices/{{ $invoice->id_invoices }}/invoice_product/create"> Añadir productos</a>
                     </div>
                     <div class="card-body p-0">
                         <div class="col col-md-12 table-responsive-sm">
