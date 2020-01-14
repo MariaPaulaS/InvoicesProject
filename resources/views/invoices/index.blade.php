@@ -31,6 +31,7 @@
                     <th>Cliente</th>
                     <th>Expedicion</th>
                     <th>Vencimiento</th>
+                    <th>Estado</th>
                     <th>Acción</th>
                     </thead>
                     <tbody>
@@ -59,6 +60,11 @@
                             <td class="table-text">
                                 <div>{{ $invoice->duedate }}</div>
                             </td>
+
+                            <td class="table-text">
+                                <div>{{ $invoice->state }}</div>
+                            </td>
+
 
                             <td>
                                 <button type="submit" class="btn btn-success"

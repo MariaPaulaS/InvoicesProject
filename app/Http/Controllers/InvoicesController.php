@@ -31,8 +31,9 @@ class InvoicesController extends Controller
     {
         $clients = Client::all();
         $companies = Company::all();
+        $states = array("Sin pagar", "Pagado", "Vencido");
 
-        return view('invoices.create', compact('clients', 'companies'));
+        return view('invoices.create', compact('clients', 'companies', 'states'));
     }
 
     /**
@@ -49,7 +50,7 @@ class InvoicesController extends Controller
             'ref' => 'required|unique:invoices',
             'id_clients' => 'required',
             'id_companies' => 'required',
-            'state'=>'required'
+            'state' => 'required'
         ]);
 
         $invoice = new Invoice();
@@ -85,7 +86,12 @@ class InvoicesController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $invoice = Invoice::findOrFail($id);
+        $clients = Client::all();
+        $companies = Company::all();
+        $states = array("Sin pagar", "Pagado", "Vencido");
+        return view('invoices.edit', compact('invoice', 'clients', 'companies', 'states'));
     }
 
     /**
@@ -97,7 +103,25 @@ class InvoicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'title' => 'required',
+            'ref' => 'required',
+            'id_clients' => 'required',
+            'id_companies' => 'required',
+            'state' => 'required'
+        ]);
+
+        $invoice = Invoice::findOrFail($id);
+        $invoice->title = $validate['title'];
+        $invoice->ref = $validate['ref'];
+        $invoice->id_clients = $validate['id_clients'];
+        $invoice->id_companies = $validate['id_companies'];
+        $invoice->state = $validate['state'];
+        $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
+        $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        $invoice->save();
+
+        return redirect('invoices');
     }
 
     /**
