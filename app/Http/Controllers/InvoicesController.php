@@ -133,7 +133,8 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Invoice::findOrFail($id)->delete();
+        return redirect('invoices');
     }
 
 
