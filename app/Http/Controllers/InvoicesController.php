@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Company;
 use App\Invoice;
+use App\Product;
 use Illuminate\Http\Request;
 
 class InvoicesController extends Controller
@@ -133,5 +134,41 @@ class InvoicesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function createInvoiceProduct($id)
+    {
+        $invoice = Invoice::find($id);
+        return view('invoice_product.create', [
+            'invoice' => $invoice,
+            'products' => Product::all(),
+            'clients' => Client::all(),
+            'companies' => Company::all()
+        ]);
+    }
+    public function invoiceProductStore(Request $request, $id)
+    {
+        $invoice = Invoice::find($id);
+        $validData = $request->validate([
+            'id_products' => 'required',
+            'quantity' => 'required',
+            'unit_value' => 'required',
+            'subtotal' => 'required',
+            'total' => 'required',
+            'iva' => 'required',
+        ]);
+        $product = Product::find($validData['id_products']);
+        $validData['unit_value'] = $product->price;
+        $invoice->products()->attach($validData['id_products'], [
+            'quantity' => $validData['quantity'],
+            'unit_value' => $validData['unit_value'],
+            'total_value' => $validData['quantity'] * $validData['unit_value']
+        ]);
+        $invoice->subtotal = $validData['subtotal'];
+        $invoice->total = $validData['total'];
+        $invoice->iva = $validData['iva'];
+        $invoice->save();
+        return redirect()->route('invoices.edit', $invoice->id_invoices);
     }
 }

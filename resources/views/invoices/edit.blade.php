@@ -66,7 +66,7 @@
 
                     <div class="form-group">
                         <label for="state">Estado</label>
-                        <select name="state" id="state"                        >
+                        <select name="state" id="state">
                             <option value='{{ $invoice->state }}'
                                     selected>{{ $invoice->state}}</option>
                             @foreach($states as $state)
@@ -90,9 +90,69 @@
                         </button>
 
                     </div>
+
+
                 </form>
+
+
+
             </div>
         </div>
+
+
+        <div class="row ">
+            <div class="col-xl-12 col-lg-12 col-md-6">
+                <div class="card o-hidden border-1 my-3">
+                    <div class="card-header text-right">
+                        <a class="btn btn-primary" href="/invoices/{{ $invoice->id_invoices }}/invoice_product/create"> Añadir productos</a>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="col col-md-12 table-responsive-sm">
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio Unitario</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($invoice->products as $product)
+                                    <tr>
+                                        <td>{{ $product->ref }}</td>
+                                        <td>{{ $product->name_product }}</td>
+                                        <td>{{ $product->pivot->quantity }}</td>
+                                        <td>{{ '$'.$product->pivot->unit_value }}</td>
+                                        <td>{{ '$'.$product->pivot->total_value }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row text-right">
+                                <div class="col-sm-2 col-sm-offset-9">
+                                    <p><b> Subtotal: {{ '$'.$invoice->subtotal }}</b></p>
+                                    <p><b> IVA (16%): {{'$'.$invoice->iva }} </b></p>
+                                    <p><b>Total: {{'$'.$invoice->total }}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
+
+
+
+
+
     <!-- TODO: Current Tasks -->
 @endsection

@@ -28,3 +28,7 @@ Route::resource("/sellers", 'SellerController');
 Route::resource("/invoices", "InvoicesController");
 
 Route::resource("/products", 'ProductsController');
+
+Route::get('/invoices/{id}/invoice_product/create', 'InvoicesController@createInvoiceProduct');
+
+Route::post('/invoices/{id}/invoice_product', 'InvoicesController@invoiceProductStore');

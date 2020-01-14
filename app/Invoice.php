@@ -35,9 +35,31 @@ class Invoice extends Model
         return $this->belongsTo(Client::class, "id_clients");
     }
 
-    public function products(){
-        return $this->belongsToMany(Product::class, 'invoice_products', 'id_invoices', 'id_products');
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'invoice_products', 'id_invoices', 'id_products')->withPivot(['quantity', 'unit_value', 'total_value']);;
     }
+
+    public function getSubtotalAttribute()
+    {
+        if (isset($this->products[0])) {
+            return $this->products[0]->pivot->where('id_invoices', $this->id_invoices)->sum('total_value');
+        } else {
+            return 0;
+        };
+    }
+    public function getIvaAttribute()
+    {
+        $subtotal = $this->subtotal;
+        return $subtotal * (.16);
+    }
+    public function getTotalAttribute()
+    {
+        $subtotal = $this->subtotal;
+        $iva = $this->iva;
+        return $subtotal + $iva;
+    }
+
 
 
 }
