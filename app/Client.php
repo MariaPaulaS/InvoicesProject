@@ -9,6 +9,7 @@ class Client extends Model
 
     protected $primaryKey = "id_clients";
     protected $table = "clients";
+
     protected $fillable = [
         "id_clients",
         "first_name",
@@ -27,7 +28,7 @@ class Client extends Model
 
     public function invoices()
     {
-        return $this->belongsTo(Invoice::class, "id_clients");
+        return $this->hasMany(Invoice::class, "id_clients");
     }
 
 

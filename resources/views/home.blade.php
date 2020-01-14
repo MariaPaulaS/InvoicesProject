@@ -106,7 +106,7 @@
                                             <a class="btn btn-success" href="{{route('invoices.create')}}"> Agregar
                                                 factura <br></a>
                                             <p><br></p>
-                                            <a class="btn btn-dark"> Administrar existentes </a>
+                                            <a class="btn btn-dark" href="{{route('invoices.index')}}"> Administrar existentes </a>
                                         </div>
                                     </div>
                                 </div>

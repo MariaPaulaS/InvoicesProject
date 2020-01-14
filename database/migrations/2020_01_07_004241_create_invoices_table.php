@@ -23,8 +23,7 @@ class CreateInvoicesTable extends Migration
             $table->date('expedition_date')->nullable();
             $table->date('receipt_date')->nullable();
             $table->double('iva')->nullable();
-            $table->integer('id_states')->unsigned()->nullable();
-            $table->foreign('id_states')->references('id_states')->on('states');
+            $table->string('state');
             $table->integer('id_clients')->unsigned();
             $table->foreign('id_clients')->references('id_clients')->on('clients');
             $table->integer('id_companies')->unsigned();
