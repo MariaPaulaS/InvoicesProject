@@ -62,6 +62,12 @@ class InvoicesController extends Controller
         $invoice->state = $validate['state'];
         $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
         $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+
+        if($invoice->state == 'Pagado'){
+
+            $invoice->receipt_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        }
+
         $invoice->save();
 
         return redirect()->route('home');
@@ -76,7 +82,9 @@ class InvoicesController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $invoice = Invoice::findOrFail($id);
+        return view('invoices.show', compact('invoice'));
     }
 
     /**
@@ -120,6 +128,10 @@ class InvoicesController extends Controller
         $invoice->state = $validate['state'];
         $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
         $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        if($invoice->state == 'Pagado'){
+
+            $invoice->receipt_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        }
         $invoice->save();
 
         return redirect('invoices');
