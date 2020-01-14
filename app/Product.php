@@ -18,6 +18,11 @@ class Product extends Model
         return $this->belongsTo(InvoiceProduct::class, "id_products");
     }
 
+    public function invoices(){
+
+        return $this->belongsTo(Invoices::class);
+    }
+
 
 
 }

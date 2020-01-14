@@ -17,7 +17,7 @@ class Company extends Model
 
     public function invoices()
     {
-        return $this->belongsTo(Invoice::class, "id_companies");
+        return $this->hasMany(Invoice::class, 'id_invoices');
     }
 
 

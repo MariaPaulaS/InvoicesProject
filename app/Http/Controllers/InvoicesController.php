@@ -17,6 +17,9 @@ class InvoicesController extends Controller
     public function index()
     {
         //
+
+        $invoices = Invoice::all();
+        return view('invoices.index', compact('invoices'));
     }
 
     /**
@@ -45,7 +48,8 @@ class InvoicesController extends Controller
             'title' => 'required',
             'ref' => 'required|unique:invoices',
             'id_clients' => 'required',
-            'id_companies' => 'required'
+            'id_companies' => 'required',
+            'state'=>'required'
         ]);
 
         $invoice = new Invoice();
@@ -53,6 +57,7 @@ class InvoicesController extends Controller
         $invoice->ref = $validate['ref'];
         $invoice->id_clients = $validate['id_clients'];
         $invoice->id_companies = $validate['id_companies'];
+        $invoice->state = $validate['state'];
         $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
         $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
         $invoice->save();

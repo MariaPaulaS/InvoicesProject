@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-sm-offset-3 col-sm-6">
             <div class="panel-title">
-                <h1>Agregar factura</h1>
+                <h1>Editar factura</h1>
 
             </div>
             <!-- Bootstrap Boilerplate... -->
@@ -63,15 +63,15 @@
                                 <option value='Vencida'> Vencida</option>
                             @endif
                         </select>
-
-
                     </div>
+
+
 
                     <!-- Add Task Button -->
                     <div class="form-group">
 
                         <button type="submit" class="btn btn-black">
-                            <i class="fa fa-plus"></i> Crear factura
+                            <i class="fa fa-plus"></i> Actualizar factura
 
                         </button>
 

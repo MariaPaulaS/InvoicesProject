@@ -43,7 +43,7 @@ class ProductsController extends Controller
     {
         $validate = $request->validate([
             'name_product'=>'required',
-            'ref'=>'required',
+            'ref'=>'required|unique:products',
             'price'=>'required'
         ]);
 
@@ -95,9 +95,9 @@ class ProductsController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $product->name_product = $validate['name_product'];
-        $product->ref = $validate['ref'];
-        $product->price = doubleval($validate['price']);
+        $product->name_product = $request->name_product;
+        $product->ref = $request->ref;
+        $product->price =doubleval($request->price);
         $product->save();
         return redirect('products');
 

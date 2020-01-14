@@ -16,12 +16,13 @@ class Invoice extends Model
         "duedate",
         "expedition_date",
         "receipt_date",
+        "state",
         "iva"
     ];
 
     public function companies()
     {
-        return $this->hasMany(Company::class, "id_companies");
+        return $this->belongsTo(Company::class, 'id_companies');
     }
 
     public function states()
@@ -31,12 +32,11 @@ class Invoice extends Model
 
     public function clients()
     {
-        return $this->hasMany(Client::class, "id_client");
+        return $this->belongsTo(Client::class, "id_clients");
     }
 
-    public function invoice_products()
-    {
-        return $this->belongsTo(InvoiceProduct::class, "id_invoice");
+    public function products(){
+        return $this->belongsToMany(Product::class, 'invoice_products', 'id_invoices', 'id_products');
     }
 
 
