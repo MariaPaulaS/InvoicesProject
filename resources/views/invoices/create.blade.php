@@ -51,20 +51,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="state">Estado: </label>
-                        <select name="state" id="state">
-                            @if (isset($invoice->state))
-                                <option value='Pagada' selected>Pagada</option>
-                                <option value='Sin pagar'> Sin pagar</option>
-                                <option value='Vencida'> Vencida</option>
-                            @else
-                                <option value='Sin pagar' selected>Sin pagar</option>
-                                <option value='Pagada'> Pagada</option>
-                                <option value='Vencida'> Vencida</option>
-                            @endif
+                        <label for="state">Estado</label>
+                        <select name="state" id="state"  >
+                            @foreach($states as $state)
+                                    <option
+                                        value='{{ $state }}'> {{ $state }} </option>
+                            @endforeach
                         </select>
-
-
                     </div>
 
                     <!-- Add Task Button -->

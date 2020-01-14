@@ -14,27 +14,34 @@
             @include('common.errors')
 
             <!-- New Task Form -->
-                <form action={{ url('invoices') }} method="POST" class="form-horizontal">
+                <form action={{ url('invoices') }}/{{ $invoice->id_invoices }} method="POST" class="form-horizontal">
                 {{ csrf_field() }}
+                {{ method_field('PUT') }}
 
                 <!-- Attributes Names -->
                     <div class="form-group">
                         <label for="title">Título</label>
-                        <input type="text" name="title" id="title" class="form-control">
+                        <input type="text" name="title" id="title" class="form-control" value="{{ $invoice->title}}">
                     </div>
 
                     <div class="form-group">
                         <label for="ref">Referencia</label>
-                        <input type="text" name="ref" id="ref" class="form-control">
+                        <input type="text" name="ref" id="ref" class="form-control" value="{{ $invoice->ref}}">
                     </div>
 
                     <div class="form-group">
                         <label for="id_companies">Vendedor</label>
                         <select name="id_companies" id="id_companies"
                                 class="form-control @error('company') is-invalid @enderror">
+
+                            <option value='{{ $invoice->companies->id_companies }}'
+                                    selected>{{$invoice->companies->nit . ': ' . $invoice->companies->name }}</option>
                             @foreach($companies as $company)
-                                <option
-                                    value=' {{ $company->id_companies }}'> {{ $company->nit . ': ' . $company->name }} </option>
+
+                                @if($company->id_companies != $invoice->companies->id_companies )
+                                    <option
+                                        value=' {{ $company->id_companies }}'> {{ $company->nit . ': ' . $company->name }} </option>
+                                @endif
                             @endforeach
                         </select>
                     </div>
@@ -43,29 +50,36 @@
                         <label for="id_clients">Cliente</label>
                         <select name="id_clients" id="id_clients"
                                 class="form-control @error('client') is-invalid @enderror">
+                            <option value='{{ $invoice->clients->id_clients }}'
+                                    selected>{{ $invoice->clients->id_card . ': ' . $invoice->clients->first_name . ' ' . $invoice->clients->last_name }}</option>
                             @foreach($clients as $client)
-                                <option
-                                    value='{{ $client->id_clients }}'> {{ $client->id_card . ': ' . $client->first_name . ' ' . $client->last_name  }} </option>
+
+                                @if($client->id_clients != $invoice->clients->id_clients )
+
+                                    <option
+                                        value='{{ $client->id_clients }}'> {{ $client->id_card . ': ' . $client->first_name . ' ' . $client->last_name  }} </option>
+
+                                @endif
                             @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="state">Estado: </label>
-                        <select name="state" id="state">
-                            @if (isset($invoice->state))
-                                <option value='Pagada' selected>Pagada</option>
-                                <option value='Sin pagar'> Sin pagar</option>
-                                <option value='Vencida'> Vencida</option>
-                            @else
-                                <option value='Sin pagar' selected>Sin pagar</option>
-                                <option value='Pagada'> Pagada</option>
-                                <option value='Vencida'> Vencida</option>
-                            @endif
+                        <label for="state">Estado</label>
+                        <select name="state" id="state"                        >
+                            <option value='{{ $invoice->state }}'
+                                    selected>{{ $invoice->state}}</option>
+                            @foreach($states as $state)
+
+                                @if($state != $invoice->state )
+
+                                    <option
+                                        value='{{ $state }}'> {{ $state }} </option>
+
+                                @endif
+                            @endforeach
                         </select>
                     </div>
-
-
 
                     <!-- Add Task Button -->
                     <div class="form-group">
