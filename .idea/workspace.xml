@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e86c114-2364-48f0-9691-3c6d50fc606d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,10 +190,14 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1578660928395" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578920539980">
+    <state x="377" y="27" width="709" height="741" key="find.popup" timestamp="1582726857069">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1578920539980" />
+    <state x="377" y="27" width="709" height="741" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1582726857069" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582727266203">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1582727266203" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
