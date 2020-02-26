@@ -46,7 +46,7 @@ class CompaniesController extends Controller
         $company->name = $validate['name'];
         $company->nit = intval($validate['nit']);
         $company->save();
-        return redirect()->route('home');
+        return redirect()->route('companies.index');
     }
 
     /**

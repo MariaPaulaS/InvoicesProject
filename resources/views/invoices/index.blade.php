@@ -6,12 +6,16 @@
     <div class="col-md-11">
 
 
+        <a class="btn btn-primary" href="{{ route('invoices.create') }}"> Agregar factura<br></a>
+
         <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
         <p><br></p>
 
 
         <div class="panel-title">
             <h1>Lista de facturas</h1>
+
+            <h4>Haga clic sobre el nombre de la factura si desea ver la vista completa.</h4>
             <br>
 
         </div>
