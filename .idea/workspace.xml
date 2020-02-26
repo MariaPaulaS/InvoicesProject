@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e86c114-2364-48f0-9691-3c6d50fc606d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/InvoicesProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +129,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
@@ -171,6 +173,7 @@
       <workItem from="1578533140823" duration="3077000" />
       <workItem from="1578660922567" duration="10364000" />
       <workItem from="1578915334671" duration="1943000" />
+      <workItem from="1582728515314" duration="395000" />
     </task>
     <servers />
   </component>
@@ -186,14 +189,18 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1578700562459" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1578660928395">
+    <state width="581" height="446" key="SwitcherDM" timestamp="1582727481560">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1578660928395" />
-    <state x="377" y="27" width="709" height="741" key="find.popup" timestamp="1582726857069">
+    <state width="581" height="446" key="SwitcherDM/67.27.1299.741@67.27.1299.741" timestamp="1582727481560" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1582728954985">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="377" y="27" width="709" height="741" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1582726857069" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1582728954985" />
+    <state x="377" y="27" width="709" height="741" key="find.popup" timestamp="1582727462985">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="377" y="27" width="709" height="741" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1582727462985" />
     <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582727266203">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
