@@ -52,7 +52,7 @@ class ProductsController extends Controller
         $product->ref = $validate['ref'];
         $product->price = doubleval($validate['price']);
         $product->save();
-        return redirect('/home');
+        return redirect()->route('products.index');
     }
 
     /**

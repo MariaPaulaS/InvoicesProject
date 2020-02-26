@@ -5,6 +5,7 @@
 
     <div class="col-md-11">
 
+        <a class="btn btn-primary" href="{{ route('products.create') }}"> Agregar producto<br></a>
 
         <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
         <p><br></p>

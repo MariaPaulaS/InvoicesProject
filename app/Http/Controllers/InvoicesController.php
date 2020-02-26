@@ -70,7 +70,7 @@ class InvoicesController extends Controller
 
         $invoice->save();
 
-        return redirect()->route('home');
+        return redirect()->route('invoices.index');
         //
     }
 

@@ -60,7 +60,7 @@ class ClientsController extends Controller
         $client->country = $validate['country'];
         $client->number_phone = intval($validate['number_phone']);
         $client->save();
-        return redirect()->route('home');
+        return redirect()->route('clients.index');
     }
 
     /**
