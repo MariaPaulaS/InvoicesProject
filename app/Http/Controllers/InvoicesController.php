@@ -12,6 +12,7 @@ class InvoicesController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * Prueba de repositorio
      *
      * @return \Illuminate\Http\Response
      */
