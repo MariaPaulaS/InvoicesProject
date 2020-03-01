@@ -149,7 +149,9 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-        Invoice::findOrFail($id)->delete();
+        $invoice = Invoice::findOrFail($id);
+        $invoice->products()->detach();
+        $invoice->delete();
         return redirect('invoices');
     }
 
