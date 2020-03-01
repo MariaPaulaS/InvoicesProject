@@ -25,7 +25,8 @@
                                     <input type="file" name="file" id="file">
 
                                     <br/> <br/>
-                                    <button type="submit" class="btn btn-primary">Importar Facturas</button>
+                                    <button type="submit" class="btn btn-success">Importar Facturas</button>
+                                <button type="submit" class="btn btn-primary">Volver</button>
                                 </form>
                         </div>
                     </div>

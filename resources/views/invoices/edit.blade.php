@@ -109,7 +109,18 @@
                 <div class="card o-hidden border-1 my-3">
                     <div class="card-header text-right">
                         <a class="btn btn-success" href="/invoices/{{ $invoice->id_invoices }}/invoice_product/create"> Añadir productos</a>
+
+                        <form action="{{ url('invoices') }}/{{ $invoice->id_invoices }}/invoice_product/destroy" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>Vaciar factura
+                            </button>
+                        </form>
+
                     </div>
+
                     <div class="card-body p-0">
                         <div class="col col-md-12 table-responsive-sm">
 
@@ -122,6 +133,7 @@
                                     <th scope="col">Cantidad</th>
                                     <th scope="col">Precio Unitario</th>
                                     <th scope="col">Total</th>
+                                    <th scope="col"> </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -132,6 +144,9 @@
                                         <td>{{ $product->pivot->quantity }}</td>
                                         <td>{{ '$'.$product->pivot->unit_value }}</td>
                                         <td>{{ '$'.$product->pivot->total_value }}</td>
+                                        <td>
+
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>

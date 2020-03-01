@@ -6,6 +6,7 @@ use App\Client;
 use App\Company;
 use App\Imports\InvoiceImport;
 use App\Invoice;
+use App\InvoiceProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -150,6 +151,17 @@ class InvoicesController extends Controller
     {
         Invoice::findOrFail($id)->delete();
         return redirect('invoices');
+    }
+
+    public function destroyInvoiceProduct($id){
+
+        $invoice = Invoice::findOrFail($id);
+        $invoice->products()->detach();
+        $invoice = Invoice::findOrFail($id);
+        $clients = Client::all();
+        $companies = Company::all();
+        $states = array("Sin pagar", "Pagado", "Vencido");
+        return view('invoices.edit', compact('invoice', 'clients', 'companies', 'states'));
     }
 
 
