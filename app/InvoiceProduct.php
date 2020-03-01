@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class InvoiceProduct extends Model
 {
+    protected $guarded = [];
     protected $primaryKey = "id_invoice_products";
     protected $table = "invoice_products";
     protected $fillable = [

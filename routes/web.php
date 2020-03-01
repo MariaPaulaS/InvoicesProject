@@ -33,3 +33,6 @@ Route::post('/invoices/{id}/invoice_product', 'InvoicesController@invoiceProduct
 
 Route::get('invoices/show/{id}', 'InvoicesController@show');
 
+Route::get('/invoices/import/view', 'InvoicesController@importView')->name('invoices.import.view');
+
+Route::post('/invoices/import', 'InvoicesController@importExcel')->name('invoices.import');

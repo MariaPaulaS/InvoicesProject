@@ -6,9 +6,11 @@
     <div class="col-md-11">
 
 
-        <a class="btn btn-primary" href="{{ route('invoices.create') }}"> Agregar factura<br></a>
+        <a class="btn btn-success" href="{{ route('invoices.create') }}"> Agregar<br></a>
 
-        <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
+        <a class="btn btn-success" href="{{ route('invoices.import.view') }}"> Importar<br></a>
+
+        <a class="btn btn-primary" href="{{ route('home') }}"> Volver<br></a>
         <p><br></p>
 
 

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Company;
+use App\Imports\InvoiceImport;
 use App\Invoice;
 use App\Product;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InvoicesController extends Controller
 {
@@ -185,4 +187,22 @@ class InvoicesController extends Controller
         $invoice->save();
         return redirect()->route('invoices.edit', $invoice->id_invoices);
     }
+
+
+
+
+    public function importExcel(Request $request){
+
+        $file = $request->file('file');
+        Excel::import(new InvoiceImport, $file);
+
+        return back()->with('message', 'Facturas importada con éxito');
+
+    }
+
+    public function importView(){
+
+        return view('invoices.importInvoice');
+    }
+
 }
