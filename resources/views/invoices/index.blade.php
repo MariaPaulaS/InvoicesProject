@@ -35,7 +35,7 @@
                     <th>Titulo</th>
                     <th>Vendedor</th>
                     <th>Cliente</th>
-                    <th>Expedicion</th>
+                    <th>Creacion</th>
                     <th>Vencimiento</th>
                     <th>Estado</th>
                     <th>Acción</th>

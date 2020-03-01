@@ -15,7 +15,8 @@ class Invoice extends Model
         "id_companies",
         "id_clients",
         "state",
-        "duedate"
+        "duedate",
+        "expedition_date"
     ];
 
     public function companies()

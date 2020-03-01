@@ -23,6 +23,7 @@ class InvoiceImport implements ToModel
         ]);
 
         $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
+        $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
         return $invoice;
     }
 }
