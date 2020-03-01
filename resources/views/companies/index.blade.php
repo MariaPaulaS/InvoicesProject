@@ -7,10 +7,10 @@
 
 
 
-        <a class="btn btn-primary" href="{{ route('companies.create') }}"> Agregar vendedor<br></a>
+        <a class="btn btn-success" href="{{ route('companies.create') }}"> Agregar vendedor<br></a>
 
 
-        <a class="btn btn-success" href="{{ route('home') }}"> Volver<br></a>
+        <a class="btn btn-primary" href="{{ route('home') }}"> Volver<br></a>
         <p><br></p>
 
 

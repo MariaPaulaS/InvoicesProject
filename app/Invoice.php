@@ -6,18 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
+    protected $guarded = [];
     protected $primaryKey = "id_invoices";
     protected $table = "invoices";
     protected $fillable = [
         "title",
         "ref",
-        "subtotal",
-        "total",
-        "duedate",
-        "expedition_date",
-        "receipt_date",
+        "id_companies",
+        "id_clients",
         "state",
-        "iva"
+        "duedate",
+        "expedition_date"
     ];
 
     public function companies()
