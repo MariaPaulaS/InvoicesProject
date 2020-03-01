@@ -95,6 +95,8 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                {{$invoices->render()}}
             </div>
         </div>
     </div>

@@ -23,8 +23,9 @@ class InvoicesController extends Controller
     {
         //
 
-        $invoices = Invoice::all();
+        $invoices = Invoice::orderBy('id_invoices', 'DESC')->paginate(5);
         return view('invoices.index', compact('invoices'));
+
     }
 
     /**
@@ -149,7 +150,9 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-        Invoice::findOrFail($id)->delete();
+        $invoice = Invoice::findOrFail($id);
+        $invoice->products()->detach();
+        $invoice->delete();
         return redirect('invoices');
     }
 

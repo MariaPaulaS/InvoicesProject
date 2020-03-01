@@ -26,7 +26,7 @@
 
                                     <br/> <br/>
                                     <button type="submit" class="btn btn-success">Importar Facturas</button>
-                                <button type="submit" class="btn btn-primary">Volver</button>
+                                    <a class="btn btn-primary" href="{{ route('invoices.index') }}"> Volver<br></a>
                                 </form>
                         </div>
                     </div>
