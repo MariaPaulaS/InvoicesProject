@@ -14,7 +14,8 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
+
+        $companies = Company::orderBy('id_companies', 'DESC')->paginate(5);
         return view('companies.index', compact('companies'));
     }
 
