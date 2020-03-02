@@ -26,6 +26,11 @@
                                 <option value="ref">Referencia</option>
                                 <option value="client">Cliente</option>
                                 <option value="company">Vendedor</option>
+                                <option value="state">Estado</option>
+                                <option value="expedition_date">Fecha de creación</option>
+                                <option value="receipt_date">Fecha de recibida / pagada</option>
+                                <option value="duedate">Fecha de vencimiento</option>
+
                             </select>
                         </div>
                         <input type="text" class="form-control input-group-prepend" name="search" placeholder="Ingresa tu búsqueda" required>
