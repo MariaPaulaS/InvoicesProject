@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e86c114-2364-48f0-9691-3c6d50fc606d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
@@ -139,11 +138,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app" />
       <recent name="$PROJECT_DIR$/resources/views/invoices" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/views/invoiceProduct" />
       <recent name="$PROJECT_DIR$/resources/views/products" />
-      <recent name="$PROJECT_DIR$/resources/views/companies" />
     </key>
   </component>
   <component name="RunManager">
@@ -186,7 +185,7 @@
       <workItem from="1582990781395" duration="6027000" />
       <workItem from="1583069485937" duration="21734000" />
       <workItem from="1583174516837" duration="523000" />
-      <workItem from="1583178519063" duration="4306000" />
+      <workItem from="1583178519063" duration="5369000" />
     </task>
     <servers />
   </component>
@@ -194,10 +193,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="426" y="201" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582994203913">
+    <state x="426" y="201" width="594" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583183378873">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="426" y="201" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741@67.27.1299.741" timestamp="1582994203913" />
+    <state x="426" y="201" width="594" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741@67.27.1299.741" timestamp="1583183378873" />
     <state x="449" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583096435221">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -226,10 +225,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1578945622094" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1583182709199">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1583183310258">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1583182709199" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1583183310258" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
