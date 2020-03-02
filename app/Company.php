@@ -20,5 +20,12 @@ class Company extends Model
         return $this->hasMany(Invoice::class, 'id_invoices');
     }
 
+    public function scopeSearch($query, $search, $type)
+    {
+        if ($type)
+            if ($search)
+                return $query->where("$type", 'LIKE', "%$search%");
+    }
+
 
 }

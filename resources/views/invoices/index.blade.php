@@ -1,4 +1,4 @@
-@extends('layouts.app1')
+@extends('layouts.app')
 
 @section('content')
 
@@ -11,13 +11,42 @@
         <a class="btn btn-success" href="{{ route('invoices.import.view') }}"> Importar<br></a>
 
         <a class="btn btn-primary" href="{{ route('home') }}"> Volver<br></a>
-        <p><br></p>
+
+
+
+
+        <div class="justify-content-end">
+            <form action="{{ route('invoices.index') }}" method="GET" class="form-inline justify-content-end">
+                <div class="form-group">
+                    <div class="input-group mb-2">
+                        <div>
+                            <select name="type" class="form-control mr-sm-2" id="type">
+                                <option disabled selected>Buscar por:</option>
+                                <option value="title">Nombre</option>
+                                <option value="ref">Referencia</option>
+                                <option value="client">Cliente</option>
+                                <option value="company">Vendedor</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control input-group-prepend" name="search" placeholder="Ingresa tu búsqueda" required>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
 
 
         <div class="panel-title">
             <h1>Lista de facturas</h1>
 
-            <h4>Haga clic sobre el nombre de la factura si desea ver la vista completa.</h4>
+            <h5>Haga clic sobre el nombre de la factura si desea ver la vista completa.</h5>
+            <br>
             <br>
 
         </div>

@@ -23,6 +23,11 @@ class Product extends Model
         return $this->belongsTo(Invoices::class);
     }
 
-
+    public function scopeSearch($query, $search, $type)
+    {
+        if ($type)
+            if ($search)
+                return $query->where("$type", 'LIKE', "%$search%");
+    }
 
 }
