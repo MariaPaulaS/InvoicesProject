@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e86c114-2364-48f0-9691-3c6d50fc606d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/companies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +184,9 @@
       <workItem from="1582720759630" duration="3283000" />
       <workItem from="1582980500477" duration="1870000" />
       <workItem from="1582990781395" duration="6027000" />
-      <workItem from="1583069485937" duration="14154000" />
+      <workItem from="1583069485937" duration="21734000" />
+      <workItem from="1583174516837" duration="523000" />
+      <workItem from="1583178519063" duration="4306000" />
     </task>
     <servers />
   </component>
@@ -215,10 +210,14 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1579016403834" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1583069484727">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1583178522255">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1583069484727" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1583178522255" />
+    <state x="484" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583102790775">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="484" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1583102790775" />
     <state x="362" y="128" width="709" height="536" key="find.popup" timestamp="1582991090440">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -227,10 +226,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1578945622094" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1583096735592">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1583182709199">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1583096735592" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1583182709199" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

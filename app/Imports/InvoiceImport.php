@@ -19,8 +19,14 @@ class InvoiceImport implements ToModel
              'ref' => $row[1],
             'id_companies' => $row[2],
             'id_clients' => $row[3],
-            'state' => 'Sin pagar'
+            'state' => $row[4]
+
+
         ]);
+        if($invoice->state == 'Pagada' || $invoice->state == 'Pagado'){
+
+            $invoice->receipt_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));
+        }
 
         $invoice->duedate = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 30 days"));
         $invoice->expedition_date = date("Y-m-d H:i:s", strtotime($invoice->created_at . "+ 0 days"));

@@ -60,5 +60,20 @@ class Invoice extends Model
     }
 
 
+    public function scopeSearch($query, $search, $type)
+    {
+        if ($type)
+            if ($search)
+                if ($type == 'client')
+                    return Invoice::whereHas('clients', function ($query) use($search){
+                        $query->where('first_name', 'LIKE', "%$search%")->orWhere('last_name', 'LIKE', "%$search%") ;
+                    });
+                elseif ($type == 'company')
+                    return Invoice::whereHas('companies', function ($query) use($search){
+                        $query->where('name', 'LIKE', "%$search%");
+                    });
+                else
+                    return $query->where("$type", 'LIKE', "%$search%");
+    }
 
 }

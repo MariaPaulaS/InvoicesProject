@@ -1,4 +1,4 @@
-@extends('layouts.app1')
+@extends('layouts.app')
 
 @section('content')
 
@@ -9,7 +9,34 @@
         <a class="btn btn-success" href="{{ route('clients.create') }}"> Agregar cliente<br></a>
 
         <a class="btn btn-primary" href="{{ route('home') }}"> Volver<br></a>
-        <p><br></p>
+
+        <div class="justify-content-end">
+            <form action="{{ route('clients.index') }}" method="GET" class="form-inline justify-content-end">
+                <div class="form-group">
+                    <div class="input-group mb-2">
+                        <div>
+                            <select name="type" class="form-control mr-sm-2" id="type">
+                                <option disabled selected>Buscar por:</option>
+                                <option value="first_name">Nombre</option>
+                                <option value="last_name">Apellido</option>
+                                <option value="id_card">Identificación</option>
+                                <option value="number_phone">Teléfono</option>
+                                <option value="email">E-mail</option>
+                                <option value="address">Dirección</option>
+                                <option value="city">Ciudad</option>
+                                <option value="country">País</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control input-group-prepend" name="search" placeholder="Ingresa tu búsqueda" required>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
 
         <div class="panel-title">

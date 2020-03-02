@@ -19,11 +19,15 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
 
-        $invoices = Invoice::orderBy('id_invoices', 'DESC')->paginate(5);
+        $search = $request->get('search');
+        $type = $request->get('type');
+        $invoices = Invoice::orderBy('id_invoices', 'DESC')
+            ->search($search, $type)
+            ->paginate(5);
         return view('invoices.index', compact('invoices'));
 
     }
